@@ -1,0 +1,576 @@
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --max-width: 1170px;
+    --fixed-width: 450px;
+    --clr-orange-1: hsl(12, 83%, 98%);
+    --clr-orange-2: hsl(14, 91%, 95%);
+    --clr-orange-3: hsl(12, 89%, 89%);
+    --clr-orange-4: hsl(13, 87%, 82%);
+    --clr-orange-5: hsl(13, 88%, 68%);
+    --clr-orange-6: hsl(13, 88%, 55%);
+    --clr-orange-7: hsl(13, 74%, 49%);
+    --clr-orange-8: hsl(13, 74%, 33%);
+    --clr-orange-9: hsl(13, 73%, 25%);
+    --clr-orange-10: hsl(13, 73%, 16%);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+#root {
+    height: 100%;
+}
+
+/*---- Input type number ----*/
+/* Chromium & Safari*/
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#main-navbar a.disabled {
+    color: grey;
+}
+
+.main-app-div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: red;
+    padding: 3rem;
+    margin-top: auto;
+    /* position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 10vh;*/
+}
+
+.item {
+    background: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--fixed-width);
+    margin: 2rem auto;
+    align-items: center;
+    border-radius: var(--radius);
+}
+
+.products {
+    margin: 4rem 0;
+    display: grid;
+    gap: 2rem;
+    border: 1px solid white;
+}
+
+/*
+@media screen and (min-width: 576px) {
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+*/
+
+.product {
+    background: var(--clr-white);
+    border-radius: var(--radius);
+}
+
+.ordered-item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-info {
+    text-align: left;
+}
+
+.flush-button {
+    width: 100%;
+}
+
+/*
+.left-col {
+    background-color: green;
+}
+*/
+
+/*
+.mid-col {
+    background-color: #202020;
+}
+*/
+
+/*
+.right-col {
+    background-color: yellow;
+}
+*/
+
+/**** - Main Page - ****/
+
+.main-home-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    /*grid-template-columns: repeat(4, 1fr);*/
+    /*grid-auto-rows: 1fr;*/
+}
+
+/*    
+.main-home-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.main-home-div > * {
+    flex: 1;
+}
+*/
+
+.home-item-div {
+    /*flex: 0 0 33.33333%;*/
+    background-color: red;
+}
+
+/**** - Item List Component - ****/
+
+/*
+.card-list-div {
+    height: auto;
+}
+*/
+
+.store-col {
+    text-align: right;
+}
+
+.eng-col {
+    text-align: left;
+}
+
+.footer-header {
+    background-color: #9999cc;
+}
+.price {
+    font-size: 30px;
+}
+
+/* Detail page*/
+.inner-detail-div {
+    gap: 5rem;
+}
+.detail-card-div {
+    width: 15rem;
+    background-color: red;
+}
+
+.detail-info-div {
+    /*background-color: green;*/
+    /*padding-left: 100px;*/
+    /*padding-right: 200px;*/
+}
+
+.detail-img-div {
+    width: 100%;
+}
+
+.detail-item-form {
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    width: 20rem;
+    height: 10rem;
+}
+
+.item-info-div {
+    width: 100%;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+.item-purchase-input {
+    width: 7rem;
+}
+
+.detail-left-col {
+    background-color: blue;
+}
+
+.detail-mid-col {
+    background-color: yellow;
+}
+
+.detail-right-col {
+    background-color: green;
+}
+
+/*Item Cart*/
+.no-items-cart {
+    margin-top: 5rem;
+}
+
+.form-group-label {
+    text-align: left;
+}
+.main-refund-card {
+    margin-bottom: 5rem;
+}
+.main-card-refund-header {
+    background-color: #383838;
+    /*margin-top: -2.5rem;*/
+    /*margin-bottom: -8rem;*/
+}
+
+.mobile-checkout-div {
+    display: none;
+}
+
+/*
+.refund-button {
+    background-color: red;
+}
+*/
+
+.refund-image-item {
+    width: 15rem;
+}
+/*
+.refund-item-q {
+    width: 50%;
+}
+*/
+
+.register-login-div {
+    padding-top: 50px;
+}
+
+.register-login-form-card {
+    width: 40%;
+    text-align: left;
+}
+.subtotal-div {
+    text-align: right;
+}
+
+/*
+.shop-cart-table {
+    background-color: green;
+}
+*/
+.subtotal-side-card {
+    height: 10rem;
+    width: 20rem;
+}
+/*
+.col-span-offset {
+    background-color: red;
+}
+*/
+.mid-col-checkout {
+    text-align: left;
+}
+
+/**** - Place Order - ****/
+
+.payment-div {
+    width: 25rem;
+}
+
+.order-sum-content {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.order-sum-p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#card-element {
+    /*background-color: green;*/
+}
+
+/*
+.dropdown-div {
+    background-color: green;
+}
+*/
+
+.order-p {
+    font-size: 18px;
+}
+/*
+.div-single-refund-info {
+    background-color: green;
+}
+*/
+.card-single-refund-info {
+    display: flex;
+}
+
+.refund-btn-div {
+    width: 20rem;
+}
+
+.card-refund-amount {
+    width: 20rem;
+}
+
+/**** - Refund Item Page - ****/
+
+.main-refund-item-div {
+    gap: 4rem;
+}
+
+.remove-link-decorations {
+    text-decoration: none;
+}
+
+.pointer-label {
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .btn-group {
+        width: 100%;
+    }
+    .register-login-form-card {
+        width: 100%;
+    }
+    .home-item-div {
+        width: 100%;
+    }
+
+    /**** - Item Detail Page ****/
+
+    .detail-card-div {
+        background-color: green;
+        width: 100%;
+    }
+    .inner-detail-div {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .main-detail-info {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .detail-item-form,
+    .main-ordered-items-div,
+    .place-to-cart-btn {
+        width: 100%;
+    }
+
+    /*
+    .place-to-cart-btn {
+        width: 95%;
+    }
+    */
+
+    /**** - Item Cart ****/
+
+    .item-cart-div {
+        flex-direction: column;
+    }
+
+    .qty-btn-group {
+        display: grid;
+        /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .subtotal-side-card {
+        width: 100%;
+    }
+    .main-subtotal-div {
+        width: 100%;
+    }
+    .subtotal-container {
+        width: 100%;
+    }
+
+    .subtotal-container {
+        display: none;
+    }
+    .mobile-checkout-div {
+        display: unset;
+        width: 100%;
+        height: 5rem;
+    }
+    .mobile-checkout-btn {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .subtotal-side-card {
+        width: 100%;
+    }
+
+    /**** - Place Order Page -****/
+    .main-place-order-div {
+        flex-direction: column;
+    }
+    .order-shipping-row {
+        flex-direction: column;
+    }
+
+    .purchase-item-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .payment-div {
+        width: 100%;
+    }
+
+    .place-order-button {
+        margin-top: 1rem;
+    }
+
+    .header-order-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .refund-button {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .main-refund-card {
+        margin-bottom: 1rem;
+    }
+    .header-order-info {
+        display: flex;
+        flex-direction: row;
+    }
+    .header-order-info-p {
+        font-size: 12px;
+    }
+
+    /**** - Refund Item Page - ****/
+    .main-refund-div {
+        flex-direction: column;
+    }
+    .main-refund-item-div {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-single-refund-info {
+    }
+    .card-refund-amount {
+        width: 100%;
+    }
+    .refund-div-flex {
+        flex-direction: column;
+    }
+    .refund-item-img-col {
+        display: flex;
+    }
+    .refund-image-item {
+        width: 100%;
+    }
+    .input-refund-div {
+        width: 50%;
+    }
+
+    .refund-item-container {
+        width: 100%;
+    }
+    .refund-item-img-col {
+    }
+    .refund-item-btn-container {
+    }
+    .refund-btn-div {
+        width: 100%;
+        height: 10rem;
+    }
+
+    /**** - Refund Confirm Page - ****/
+    .refund-confirm-main-container {
+        flex-direction: column;
+    }
+    .card-single-refund-info {
+        flex-direction: column;
+    }
+
+    /**** - Shipping Page - ****/
+    .shipping-flex,
+    .billing-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .accordion {
+        margin-top: 2rem;
+    }
+    .set-default-address-btn {
+        margin-top: 1rem;
+    }
+
+    /*
+    .footer-div {
+        padding-top: 40rem;
+    }
+    */
+}
