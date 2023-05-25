@@ -232,7 +232,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("access");
         localStorage.removeItem("refresh");
 
-        navigate("/login");
+        navigate("/");
     };
 
     const updateToken = async () => {

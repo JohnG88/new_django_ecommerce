@@ -74,7 +74,7 @@ const ItemCart = () => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                //Authorization: `Bearer ${accessToken}`,
             },
         };
 
@@ -313,7 +313,7 @@ const ItemCart = () => {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${accessToken}`,
+                        //Authorization: `Bearer ${accessToken}`,
                     },
                     body: JSON.stringify({
                         quantity: Number(singleOrder.quantity),
@@ -346,7 +346,7 @@ const ItemCart = () => {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                //Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify({
                 stock: Number(order.item_detail.stock),

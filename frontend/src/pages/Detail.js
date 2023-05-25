@@ -36,7 +36,7 @@ const Detail = () => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                //Authorization: `Bearer ${accessToken}`,
             },
         });
         const data = await response.json();
@@ -52,7 +52,7 @@ const Detail = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                //Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify({
                 quantity: number,
@@ -74,7 +74,7 @@ const Detail = () => {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                //Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify({
                 stock: item.stock - number,

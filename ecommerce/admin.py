@@ -13,6 +13,7 @@ class CustomUserAdmin(UserAdmin):
             {
                 'fields': (
                     'avatar',
+                    'device',
                 )
             }
         )

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { setCookie } from "./utils/cookieUtils";
 import HomePage from "./pages/HomePage";
 import Detail from "./pages/Detail";
 import AddOrder from "./pages/AddOrder";
@@ -30,10 +31,20 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 //const stripePromise = loadStripe(
 //    "pk_test_51MbBxyAiXv078N17V9ukZj6eRNktfczUy6a2nLBvmxOtfNn1TdMIn1lSnYU4yRPKxA2Dx0LPnd2cW4aKM8d9HxBQ00yihHwGzd"
 //);
+/*
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16)
+    })
+}
+*/
 
 function App() {
+    setCookie()
     return (
         <Elements stripe={stripePromise}>
+            
             <div className="App main-app-div">
                 <BrowserRouter>
                     <AuthProvider>
@@ -47,21 +58,19 @@ function App() {
                                 path="/detail/:detailId/"
                                 element={<Detail />}
                             />
+                            <Route path="/order-item/" element={<ItemCart />} />
+                            <Route
+                                    path="/ordered-items/"
+                                    element={<OrderItems />}
+                                />
                             <Route path="/" element={<PrivateRoute />}>
                                 <Route
                                     path="dashboard"
                                     element={<Dashboard />}
                                 />
                                 <Route path="profile" element={<Profile />} />
-
-                                <Route
-                                    path="/order-item/"
-                                    element={<ItemCart />}
-                                />
-                                <Route
-                                    path="/ordered-items/"
-                                    element={<OrderItems />}
-                                />
+s
+                                
                                 <Route
                                     path="/shipping/"
                                     element={<ShippingAddress />}

@@ -21,6 +21,7 @@ class CustomUser(AbstractUser):
     stripe_customer_id = models.CharField(max_length=100, blank=True)
     age = models.PositiveIntegerField(blank=True, null=True)
     avatar = models.ImageField(default='avatar.png', upload_to='avatars')
+    device = models.CharField(max_length=300, null=True, blank=True)
 
     #def save(self, *args, **kwargs):
     #    self.set_password(self.password)
